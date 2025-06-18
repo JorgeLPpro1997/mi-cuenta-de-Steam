@@ -1,121 +1,168 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" ""> 
-<html xmlns=" "> 
-    <head> 
-        <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Zona de Juegos</title>         
-        <link rel="stylesheet" href="style.css" type="text/css" media="screen"/> 
-        <style>
-          /* Canvas de partículas encima de todo */
-          #bg-particles {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            z-index: 1000;
-            pointer-events: none;
-            display: block;
-          }
-          #container { 
-            position: relative; 
-            z-index: 1001; 
-            background: rgba(47,46,46,0.85); /* semitransparente */
-          }
-        </style>
-    </head>     
-    <body> 
-        <canvas id="bg-particles"></canvas>
-        <div id="container"> 
-            <div id="body_image" style="height: 490px;">&nbsp;</div>             
-            <div id="page_header">
-                <h1>Jorge LP</h1> 
-            </div>             
-            <div id="page_forms"> 
-                <div id="userlogin"> 
-                    <form action="#"> 
-                        <div id="field_username"></div>                         
-                        <div id="field_password"> <strong>Agregame en Steam </strong> 
-                        </div>                         
-                        <div id="button_enter"> 
-                            <input type="submit" value="Entrar" class="button"/> 
-                        </div>                         
-                    </form>                     
-                </div>                 
-                <div id="sitesearch_header"></div>                 
-                <div id="sitesearch"></div>                 
-            </div>             
-            <div id="clearthis_contentbody">&nbsp;</div>             
-        </div>         
-        <audio id="bg-music" src="music/fondomusicweb.mp3" preload="auto"></audio>
-        <script>
-  // Reproducir música solo una vez, asegurando reproducción tras interacción
-  function playMusicOnce() {
-    var audio = document.getElementById('bg-music');
-    if (audio.paused) {
-      audio.play();
-      audio.removeEventListener('click', playMusicOnce);
-      document.removeEventListener('click', playMusicOnce);
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zona de Juegos - Jorge LP</title>
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <link href="" rel="stylesheet">
+  <style>
+    #button_enter input[type="image"] {
+      transition: filter 0.2s;
+      filter: none;
+      cursor: pointer;
     }
-  }
-  window.addEventListener('DOMContentLoaded', function() {
-    var audio = document.getElementById('bg-music');
-    audio.play().catch(function() {
-      document.addEventListener('click', playMusicOnce);
-    });
-    var form = document.querySelector('#userlogin form');
-    var btn = document.querySelector('#button_enter input');
-    if (form && btn) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        btn.style.backgroundColor = '#0074D9';
-        btn.style.color = '#fff';
-        window.location.href = 'steam://openurl/https://steamcommunity.com/id/JorgeLP19/';
-      });
+    #button_enter input[type="image"].hover-red {
+      filter: drop-shadow(0 0 8px red);
     }
-  });
+    #button_enter input[type="image"].hover-purple {
+      filter: drop-shadow(0 0 8px purple);
+    }
+    #button_enter input[type="image"].hover-green {
+      filter: drop-shadow(0 0 8px limegreen);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bg-particles"></canvas>
 
-  // --- Partículas flotantes (no reaccionan al audio) ---
-  (function() {
-    const canvas = document.getElementById('bg-particles');
-    const ctx = canvas.getContext('2d');
-    let W = window.innerWidth, H = window.innerHeight;
-    function resize() {
-      W = window.innerWidth; H = window.innerHeight;
-      canvas.width = W; canvas.height = H;
-    }
-    window.addEventListener('resize', resize);
-    resize();
-    const PARTICLE_COUNT = 80;
-    const particles = [];
-    for (let i = 0; i < PARTICLE_COUNT; i++) {
-      particles.push({
-        x: Math.random() * W,
-        y: Math.random() * H,
-        r: 2 + Math.random() * 4,
-        color: `hsl(${Math.random()*360}, 80%, 60%)`,
-        dx: (Math.random()-0.5)*1.5,
-        dy: (Math.random()-0.5)*1.5,
-        baseR: 2 + Math.random() * 4
+  <div id="container">
+    <div id="body_image"></div>
+
+    <div id="page_header">
+      <h1>Jorge LP</h1>
+    </div>
+
+    <div id="page_forms">
+      <div id="userlogin">
+        <form action="#">
+          <div id="field_password">
+            <strong>¡Agregame en Steam!</strong>
+          </div>
+          <div id="button_enter" style="display: flex; align-items: center; justify-content: center; height: 48px;">
+            <input type="image" src="images/steam.png" alt="Entrar con Steam" class="button" style="height: 48px; width: auto; background: none; border: none; padding: 0; margin: 0;" />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2></h2>
+      <ul>
+        <li><img src="images/rubitigre.png" alt="Imagen de Rubitigre" /></li>
+       
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🎮 Mi Juego Favorito</h2>
+      <ul>
+        <li>Left 4 Dead 2</li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🛠️ Mis Mods para Left 4 Dead 2</h2>
+      <ul>
+        <li>Mods personalizadas</li>
+        <li>Plugins modificados para la comunidad de left 4 dead 2</li>
+        <li><a href=" " target="_blank" rel="noopener">Muy Pronto</a></li>
+      </ul>
+    </div>
+
+    <!--<div id="music-controls">
+      <button onclick="toggleMusic()">Pausar / Reanudar Música</button>
+    </div>-->
+
+    <div id="page_footer">&copy; Jorge LP 2025</div>
+  </div>
+
+  <audio id="bg-music" src="music/fondomusicweb.mp3" preload="auto" loop></audio>
+
+  <script>
+    const audio = document.getElementById('bg-music');
+    // Reproducir música al primer clic en cualquier parte de la página
+    window.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener('click', function playOnce() {
+        audio.play().catch(() => {});
+        document.removeEventListener('click', playOnce);
       });
-    }
-    function animate() {
-      ctx.clearRect(0, 0, W, H);
-      for (let p of particles) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.baseR, 0, 2 * Math.PI);
-        ctx.fillStyle = p.color;
-        ctx.globalAlpha = 0.7;
-        ctx.fill();
-        ctx.globalAlpha = 1;
-        p.x += p.dx + Math.sin(Date.now()/700 + p.y)*0.2;
-        p.y += p.dy + Math.cos(Date.now()/900 + p.x)*0.2;
-        if (p.x < 0 || p.x > W) p.dx *= -1;
-        if (p.y < 0 || p.y > H) p.dy *= -1;
+    });
+
+    function toggleMusic() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
       }
-      requestAnimationFrame(animate);
     }
-    animate();
-  })();
-  // --- Fin partículas ---
-        </script>
-        <div id="page_footer"> Copyright JLP 2025 </div>         
-    </body>     
+
+    window.addEventListener('DOMContentLoaded', function () {
+      const form = document.querySelector('#userlogin form');
+      const btn = document.querySelector('#button_enter input');
+      if (form && btn) {
+        let hoverState = 0;
+        const hoverClasses = ['hover-red', 'hover-purple', 'hover-green'];
+        btn.addEventListener('mouseenter', function () {
+          btn.classList.remove('hover-red', 'hover-purple', 'hover-green');
+          btn.classList.add(hoverClasses[hoverState]);
+          hoverState = (hoverState + 1) % hoverClasses.length;
+        });
+        btn.addEventListener('mouseleave', function () {
+          btn.classList.remove('hover-red', 'hover-purple', 'hover-green');
+        });
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          btn.style.backgroundColor = '#0074D9';
+          btn.style.color = '#fff';
+          window.location.href = 'steam://openurl/https://steamcommunity.com/id/JorgeLP19/';
+        });
+      }
+    });
+
+    (function () {
+      const canvas = document.getElementById('bg-particles');
+      const ctx = canvas.getContext('2d');
+      let W = window.innerWidth, H = window.innerHeight;
+      function resize() {
+        W = window.innerWidth; H = window.innerHeight;
+        canvas.width = W; canvas.height = H;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+      const PARTICLE_COUNT = 80;
+      const particles = [];
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          r: 2 + Math.random() * 4,
+          color: `hsl(${Math.random() * 360}, 80%, 60%)`,
+          dx: (Math.random() - 0.5) * 1.5,
+          dy: (Math.random() - 0.5) * 1.5,
+          baseR: 2 + Math.random() * 4,
+        });
+      }
+      function animate() {
+        ctx.clearRect(0, 0, W, H);
+        for (let p of particles) {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.baseR, 0, 2 * Math.PI);
+          ctx.fillStyle = p.color;
+          ctx.globalAlpha = 0.7;
+          ctx.fill();
+          ctx.globalAlpha = 1;
+          p.x += p.dx + Math.sin(Date.now() / 700 + p.y) * 0.2;
+          p.y += p.dy + Math.cos(Date.now() / 900 + p.x) * 0.2;
+          if (p.x < 0 || p.x > W) p.dx *= -1;
+          if (p.y < 0 || p.y > H) p.dy *= -1;
+        }
+        requestAnimationFrame(animate);
+      }
+      animate();
+    })();
+  </script>
+</body>
 </html>
