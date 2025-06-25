@@ -1,0 +1,321 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Post de Jorge LP</title>         
+        <link rel="stylesheet" type="text/css" href="style2.css"> 
+    </head>     
+    <body> 
+    <canvas id="bg-particles"></canvas>
+        <div id="container"> 
+            <div id="page_header"> 
+                <h1>Mods para Left 4 Dead 2</h1> 
+            </div>             
+            <div class="section" id="mods_section"> 
+                <h2>🛠️ Mod 1: l4d2_portales</h2> 
+                <table id="post2810887" class="tinside" cellpadding="6" cellspacing="0" border="0" width="100%" align="center"> 
+                    <tbody>
+                        <tr>                                 
+                        </tr>                             
+                        <tr valign="top"> 
+                            <td class="alt2" style="width: 175px; border-right: 1px solid rgb(255, 255, 255);" valign="top"> 
+                                <div id="postmenu_2810887"> 
+                                    <img src="images/Jorge LP pantera_redibujado.gif"> 
+                                </div>
+                                <a class="bigusername" href="#" id="go-main">Jorge LP</a> 
+                                <div class="smallfont">Admin</div>                                     
+                                <div class="smallfont" style="margin: 0.5em;"><a href="member.php?u=311461"></a></div>                                     
+                                <div class="smallfont"> 
+                                    <div>Fecha de incorporación: Junio del 2025</div>                                         
+                                    <div> </div>                                         
+                                </div>                                     
+                                <img src="" border="0" height="1" valign="top"> 
+                            </td>                                 
+                            <td class="alt2" style="margin-left: 175px;" id="td_post_2810887"> 
+                                <table width="100%" height="5" style="table-layout: fixed;"> 
+                                    <tbody>
+                                        <tr> 
+                                        </tr>                                             
+                                        <tr> 
+                                            <td align="left" colspan="2"> 
+                                                <hr size="1" style="color: rgb(209, 215, 220); background-color: rgb(209, 215, 220);" color="#D1D7DC"> 
+                                                <div id="post_message_2810887" style="width: 100%; display: block;">
+                                                    <font>
+                                                    <!-- icon and title -->
+                                                    <h2>l4d2_portales - Plugin de Portales para Left 4 Dead 2</h2>
+                                                    <h3>Descripción General</h3>
+                                                    <p>l4d2_portales es un plugin avanzado para servidores de Left 4 Dead 2 que permite a los jugadores crear y utilizar portales de teletransporte en el mapa, al estilo del juego Portal. Los jugadores pueden crear un par de portales (azul y rojo) para moverse rápidamente entre dos puntos del mapa, facilitando estrategias, escapes y movilidad avanzada. Además, los administradores pueden guardar portales permanentes para que estén disponibles en cada ronda o mapa.</p>
+                                                    <h3>Características Principales</h3>
+                                                    <ul>
+                                                        <li><strong>Creación de Portales Temporales:</strong> Los jugadores pueden crear un portal azul y luego un portal rojo, formando un par conectado. Al tocar uno, el jugador es teletransportado al otro.</li>
+                                                        <li><strong>Portales Permanentes:</strong> Los administradores pueden guardar pares de portales para que se creen automáticamente en cada ronda/mapa.</li>
+                                                        <li><strong>Efectos Visuales y Sonoros:</strong> Cada portal tiene luces dinámicas, sprites decorativos y efectos de partículas y sonido personalizables.</li>
+                                                        <li><strong>Soporte para Bots y Props:</strong> Opciones para permitir o restringir el uso de portales por bots y objetos del mapa.</li>
+                                                        <li><strong>Comandos de Administración:</strong> Elimina todos los portales, guarda portales permanentes, y restringe la creación solo a administradores si se desea.</li>
+                                                        <li><strong>Configuración Flexible:</strong> Todos los efectos, modelos y sonidos son configurables mediante ConVars.</li>
+                                                    </ul>
+                                                    <h3>Instrucciones de Uso</h3>
+                                                    <h4>Comandos para Jugadores</h4>
+                                                    <ul>
+                                                        <li>!portales o /portales Crea un portal azul en la posición donde mira el jugador. Si ya existe el azul, crea el rojo. Si ambos existen, los elimina.</li>
+                                                        <li>!portales red o !portales blue Teletransporta el portal correspondiente a la posición actual del jugador.</li>
+                                                        <li>!portalessave (Solo administradores) Guarda el par de portales actual como permanente para el mapa.</li>
+                                                    </ul>
+                                                    <h4>Comandos para Administradores</h4>
+                                                    <ul>
+                                                        <li>!pd Elimina todos los portales temporales del mapa.</li>
+                                                    </ul>
+                                                    <h3>Requisitos y Complementos Necesarios</h3>
+                                                    <ul>
+                                                        <li><strong>SourceMod</strong> (recomendado 1.10 o superior)</li>
+                                                        <li><strong>SDKTools</strong> y <strong>SDKHooks</strong> (incluidos en SourceMod)</li>
+                                                        <li><strong>Left 4 Dead 2</strong> (servidor dedicado)</li>
+                                                        <li><strong>Sprites y modelos</strong>: El plugin usa por defecto modelos y sprites del propio juego, pero puedes personalizarlos editando las ConVars.</li>
+                                                    </ul>
+                                                    <h3>Instalación</h3>
+                                                    <ol>
+                                                        <li>Coloca el archivo .smx en addons/sourcemod/plugins/.</li>
+                                                        <li>Reinicia el servidor o cambia de mapa.</li>
+                                                        <li>(Opcional) Personaliza la configuración en cfg/sourcemod/Portales.cfg que se genera automáticamente.</li>
+                                                    </ol>
+                                                    <h3>Configuración (ConVars principales)</h3>
+                                                    <ul>
+                                                        <li>sm_portales_particulas - Efecto de partículas para los portales.</li>
+                                                        <li>sm_portales_modelo - Modelo 3D del portal.</li>
+                                                        <li>sm_portales_sonidoteletransporte - Sonido al teletransportarse.</li>
+                                                        <li>sm_portales_nobots - 0: Bots pueden usar portales, 1: Solo humanos.</li>
+                                                        <li>sm_portales_nopropiedades - 0: Props pueden usar portales, 1: No pueden.</li>
+                                                        <li>sm_portales_soloadmins - 0: Todos pueden crear portales, 1: Solo admins.</li>
+                                                    </ul>
+                                                    <h3>Notas y Consejos</h3>
+                                                    <ul>
+                                                        <li>Los portales permanentes se guardan por mapa y se almacenan en addons/sourcemod/data/portals.cfg.</li>
+                                                        <li>Puedes personalizar los efectos visuales y sonoros editando las ConVars o el propio código fuente.</li>
+                                                        <li>El plugin es compatible con la mayoría de los mapas y modos de juego de L4D2.</li>
+                                                    </ul>
+                                                    <b><font size="3" color="Red">Requisitos</font></b>
+                                                    <ul>
+                                                        <li><a href="https://forums.alliedmods.net/showthread.php?t=321696" target="_blank" rel="noopener"><strong>SDKTools</strong> y <strong>SDKHooks</strong> (incluidos en SourceMod)</a></li>
+                                                    </ul>
+                                                    <b><font size="3">Registro de cambios</font></b><br>
+                                                    <div class="smallfont" style="margin-bottom: 2px;"><b>Spoiler</b>
+                                                        <input value="Mostrar" style="margin: 0px; padding: 0px; width: 45px; font-size: 10px;" onclick="if(this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != 'inline') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'inline'; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value='Show'; }" type="button">
+                                                    </div>
+                                                    <div class="alt2" style="border: 1px inset; padding: 6px;">
+                                                        <div class="spoiler" style="display: none;">
+                                                            <div style="margin:20px; margin-top:5px">
+                                                                <div class="smallfont" style="margin-bottom:2px">Cambios:</div>
+                                                                <pre class="alt2" dir="ltr" style="margin: 0px; padding: 6px; border: 1px inset; width: auto; height: 467px; text-align: left; overflow: auto;"> version 1.4-v3.JLP 2025
+Cambios y Mejoras que ise respecto al plugin original 
+en inglés de [L4D2]Portals de Flud
+
+Soporte para Portales Permanentes
+
+Ahora puedes guardar pares de portales 
+como permanentes por mapa, que se recrean automáticamente
+ en cada ronda o al cambiar de mapa. 
+ Esto no existía en el original.
+Efectos Visuales y Sonoros Mejorados
+
+Cada portal tiene luces dinámicas
+ y hasta 3 sprites decorativos de colores (azul o rojo)
+  para mayor visibilidad y estética.
+Efectos de partículas y sonidos personalizables
+ al usar o crear portales.
+Mayor Control para Administradores
+
+Comando para guardar portales permanentes (sm_portalessave).
+Comando para eliminar todos los portales del mapa (sm_pd).
+Opción para que solo administradores puedan crear portales 
+(configurable por ConVar).
+Opciones para Bots y Props
+
+Puedes permitir o bloquear que los bots y los objetos del mapa 
+(props) usen portales, mediante
+ ConVars (sm_portales_nobots y sm_portales_nopropiedades).
+Comandos Mejorados y Nuevos
+
+Comando para teletransportar portales
+ existentes a la posición del jugador
+ (sm_portales red o sm_portales blue).
+Mensajes y avisos en español para los jugadores y administradores,
+ mucho más claros y útiles.
+Configuración Avanzada y Personalización
+
+Todos los modelos, sonidos y efectos pueden ser cambiados
+ fácilmente desde el archivo de configuración
+  generado automáticamente.
+El plugin crea su propio archivo de configuración
+ para facilitar la personalización.
+Gestión de Entidades y Recursos Mejorada
+
+Limpieza automática de luces y sprites al eliminar
+ portales, evitando fugas de entidades.
+Si un portal permanente es destruido, 
+el sistema lo recrea automáticamente 
+y avisa al jugador.
+Código Mejorado y Optimizado
+
+Mejor manejo de arrays 
+y entidades para mayor estabilidad 
+y compatibilidad con versiones recientes de SourceMod.
+Mejoras en la detección de colisiones
+ y en la lógica de teletransporte.
+Traducción y Mensajes en Español
+
+Todos los mensajes,
+ comandos y avisos están completamente en español,
+  facilitando el uso en comunidades hispanohablantes</pre>
+                                                            </div>
+                                                        </div>
+                                                    </div>                                                     
+                                                </div>                                                     
+                                                <div style="padding:6px"> 
+                                                    <fieldset class="fieldset"> 
+                                                        <legend>Archivos adjuntos</legend>                                                             
+                                                        <table cellpadding="0" cellspacing="3" border="0"> 
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td></td>
+                                                                    <td><a href="#" id="obtener-plugin"><strong>Obtener plugin</strong></a> u <a href="#" id="obtener-codigo-fuente"><strong>obtener código fuente</strong></a>&nbsp; l4d2_portales
+                                                                        <div id="mensaje-codigo-fuente" style="display:none; color: green; margin-top: 8px;"></div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </fieldset>
+                                                </div>                                                     
+                                                <div class="smallfont"> 
+                                                    <hr size="1" style="color: rgb(255, 255, 255);"> <em>Última edición por Jorge LP; 21/06/2025 a las 9<span class="time">:27</span>.</em> 
+                                                </div>                                                     
+                                            </td>                                         
+                                        </tr>                                         
+                                    </tbody>
+                                </table>                                     
+                            </td>                                 
+                        </tr>                             
+                        <tr>                                                                   
+                        </tr>                             
+                    </tbody>
+                </table>                     
+            </div>                 
+        </div>         
+        <div id="page_footer">&copy; Jorge LP 2025</div>         
+    </body>     
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var enlaceCodigo = document.getElementById('obtener-codigo-fuente');
+    var enlacePlugin = document.getElementById('obtener-plugin');
+    var mensaje = document.getElementById('mensaje-codigo-fuente');
+
+    function mostrarMensaje(texto) {
+        if(mensaje) {
+            mensaje.textContent = texto;
+            mensaje.style.display = 'block';
+        }
+    }
+
+    function archivoExiste(url) {
+        return fetch(url, { method: 'HEAD' })
+            .then(function(response) {
+                return response.ok;
+            })
+            .catch(function() { return false; });
+    }
+
+    function descargarArchivo(url, nombre) {
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = nombre;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    if(enlaceCodigo) {
+        enlaceCodigo.addEventListener('click', function(e) {
+            e.preventDefault();
+            var url = 'pluginsl4d2/l4d2_portales.sp';
+            archivoExiste(url).then(function(existe) {
+                if(existe) {
+                    descargarArchivo(url, 'l4d2_portales.sp');
+                    if(mensaje) mensaje.style.display = 'none';
+                } else {
+                    mostrarMensaje('El autor todavía no ha publicado el código fuente');
+                }
+            });
+        });
+    }
+
+    if(enlacePlugin) {
+        enlacePlugin.addEventListener('click', function(e) {
+            e.preventDefault();
+            var url = 'pluginsl4d2/l4d2_portales.smx';
+            archivoExiste(url).then(function(existe) {
+                if(existe) {
+                    descargarArchivo(url, 'l4d2_portales.smx');
+                    if(mensaje) mensaje.style.display = 'none';
+                } else {
+                    mostrarMensaje('El autor no ha publicado el plugin');
+                }
+            });
+        });
+    }
+
+    // Enlace a la página principal en otra pestaña o ventana
+    var goMain = document.getElementById('go-main');
+    if(goMain) {
+      goMain.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Abrir Steam en el perfil
+        window.open('steam://openurl/https://steamcommunity.com/id/JorgeLP19/', '_self');
+      });
+    }
+});
+</script>
+<script>
+(function () {
+  const canvas = document.getElementById('bg-particles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W = window.innerWidth, H = window.innerHeight;
+  function resize() {
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = W; canvas.height = H;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+  const PARTICLE_COUNT = 80;
+  const particles = [];
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    particles.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: 2 + Math.random() * 4,
+      color: `hsl(${Math.random() * 360}, 80%, 60%)`,
+      dx: (Math.random() - 0.5) * 1.5,
+      dy: (Math.random() - 0.5) * 1.5,
+      baseR: 2 + Math.random() * 4,
+    });
+  }
+  function animate() {
+    ctx.clearRect(0, 0, W, H);
+    for (let p of particles) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.baseR, 0, 2 * Math.PI);
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = 0.7;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+      p.x += p.dx + Math.sin(Date.now() / 700 + p.y) * 0.2;
+      p.y += p.dy + Math.cos(Date.now() / 900 + p.x) * 0.2;
+      if (p.x < 0 || p.x > W) p.dx *= -1;
+      if (p.y < 0 || p.y > H) p.dy *= -1;
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+</script>
+</html>
