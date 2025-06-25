@@ -37,7 +37,7 @@
       <div id="userlogin">
         <form action="#">
           <div id="field_password">
-            <strong>¡Visítame en Steam!</strong>
+            <strong>¡Vicitame en Steam!</strong>
           </div>
           <div id="button_enter" style="display: flex; align-items: center; justify-content: center; height: 48px;">
             <input type="image" src="images/steam.png" alt="Entrar con Steam" class="button" style="height: 48px; width: auto; background: none; border: none; padding: 0; margin: 0;" />
@@ -50,31 +50,34 @@
       <h2></h2>
       <ul>
         <li><img src="images/rubitigre.png" alt="Imagen de Rubitigre" /></li>
-       
       </ul>
     </div>
 
-    <div class="section">
-      <h2>🎮 Mi Juego Favorito</h2>
-      <ul>
-        <li>Left 4 Dead 2</li>
-        <li></li>
-        <li></li>
-      </ul>
+    <div id="extra-sections-container" style="text-align:center; margin-top: 24px;">
+      <button id="toggle-sections" style="padding: 8px 20px; font-size: 1rem; border-radius: 8px; background: #222; color: #fff; border: none; cursor: pointer; transition: background 0.2s; margin-bottom: 12px;">Mostrar más</button>
+      <div id="extra-sections" style="display:none;">
+        <div class="section">
+          <h2>🎮 Mi Juego Favorito</h2>
+          <ul>
+            <li>Left 4 Dead 2</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h2>🛠️ Mis Mods para Left 4 Dead 2</h2>
+          <ul>
+            <li>Mods personalizadas</li>
+            <li>Plugins modificados para la comunidad hispanohablante de left 4 dead 2</li>
+            <li><a href="mods.html" id="mods_link" target="_blank" rel="noopener">Mods</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <div class="section">
-      <h2>🛠️ Mis Mods para Left 4 Dead 2</h2>
-      <ul>
-        <li>Mods personalizadas</li>
-        <li>Plugins modificados para la comunidad de left 4 dead 2</li>
-        <li><a href=" " target="_blank" rel="noopener">Muy Pronto</a></li>
-      </ul>
+    <div id="music-controls" style="text-align:center; margin: 32px 0 16px 0;">
+      <button id="music-toggle-btn" style="padding: 10px 24px; font-size: 1.2rem; border-radius: 8px; background: #333; color: #fff; border: none; cursor: pointer; transition: background 0.2s;">
+        🔊 Pausar Música
+      </button>
     </div>
-
-    <!--<div id="music-controls">
-      <button onclick="toggleMusic()">Pausar / Reanudar Música</button>
-    </div>-->
 
     <div id="page_footer">&copy; Jorge LP 2025</div>
   </div>
@@ -83,25 +86,46 @@
 
   <script>
     const audio = document.getElementById('bg-music');
-    // Reproducir música al primer clic en cualquier parte de la página
-    window.addEventListener('DOMContentLoaded', () => {
-      document.addEventListener('click', function playOnce() {
-        audio.play().catch(() => {});
-        document.removeEventListener('click', playOnce);
-      });
-    });
-
-    function toggleMusic() {
-      if (audio.paused) {
-        audio.play();
-      } else {
-        audio.pause();
-      }
-    }
-
+    // Reproducir música solo al hacer clic en el botón de Steam
     window.addEventListener('DOMContentLoaded', function () {
       const form = document.querySelector('#userlogin form');
       const btn = document.querySelector('#button_enter input');
+      const toggleBtn = document.getElementById('toggle-sections');
+      const extraSections = document.getElementById('extra-sections');
+      const musicBtn = document.getElementById('music-toggle-btn');
+      // Abrir o enfocar la ventana de mods
+      const modsLink = document.getElementById('mods_link');
+      function updateMusicBtn() {
+        if (audio.paused) {
+          musicBtn.innerHTML = '🔇 Reproducir Música';
+        } else {
+          musicBtn.innerHTML = '🔊 Pausar Música';
+        }
+      }
+      if (musicBtn) {
+        musicBtn.addEventListener('click', function () {
+          if (audio.paused) {
+            audio.play();
+          } else {
+            audio.pause();
+          }
+          setTimeout(updateMusicBtn, 100); // Pequeño delay para asegurar el cambio de estado
+        });
+        audio.addEventListener('play', updateMusicBtn);
+        audio.addEventListener('pause', updateMusicBtn);
+        updateMusicBtn();
+      }
+      if (toggleBtn && extraSections) {
+        toggleBtn.addEventListener('click', function () {
+          if (extraSections.style.display === 'none') {
+            extraSections.style.display = 'block';
+            toggleBtn.textContent = 'Ocultar';
+          } else {
+            extraSections.style.display = 'none';
+            toggleBtn.textContent = 'Mostrar más';
+          }
+        });
+      }
       if (form && btn) {
         let hoverState = 0;
         const hoverClasses = ['hover-red', 'hover-purple', 'hover-green'];
@@ -113,11 +137,26 @@
         btn.addEventListener('mouseleave', function () {
           btn.classList.remove('hover-red', 'hover-purple', 'hover-green');
         });
+        btn.addEventListener('click', function playMusicOnce() {
+          // Ya no reproducir música al hacer clic en la imagen de Steam
+          btn.removeEventListener('click', playMusicOnce);
+        });
         form.addEventListener('submit', function (e) {
           e.preventDefault();
           btn.style.backgroundColor = '#0074D9';
           btn.style.color = '#fff';
           window.location.href = 'steam://openurl/https://steamcommunity.com/id/JorgeLP19/';
+        });
+      }
+      // Abrir o enfocar la ventana de mods
+      if (modsLink) {
+        modsLink.addEventListener('click', function (e) {
+          e.preventDefault();
+          const win = window.open('mods.html', 'modsL4D2');
+          if (win) {
+            win.focus();
+            win.location.reload();
+          }
         });
       }
     });
